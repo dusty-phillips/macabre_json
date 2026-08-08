@@ -1,5 +1,12 @@
 # Changelog
 
+## macabre fork
+
+This repository is a fork of [gleam-lang/json](https://github.com/gleam-lang/json)
+that adds a Python target for macabre. The upstream changelog below is preserved
+unchanged. The Python FFI lives in `src/gleam_json_ffi.py` and is backed by the
+Python standard library `json` module.
+
 ## v3.1.0 - 2025-11-08
 
 - Updated for Gleam v1.13.0.

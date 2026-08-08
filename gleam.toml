@@ -1,11 +1,11 @@
-name = "gleam_json"
+name = "macabre_gleam_json"
 version = "3.1.0"
 gleam = ">= 1.13.0"
 
 licences = ["Apache-2.0"]
-description = "Work with JSON in Gleam"
+description = "Work with JSON in Gleam (macabre python-target fork of gleam_json)"
 
-repository = { type = "github", user = "gleam-lang", repo = "json" }
+repository = { type = "github", user = "dusty-phillips", repo = "macabre_gleam_json" }
 links = [
   { title = "Website", href = "https://gleam.run" },
   { title = "Sponsor", href = "https://github.com/sponsors/lpil" },
@@ -13,6 +13,7 @@ links = [
 
 [dependencies]
 gleam_stdlib = ">= 0.51.0 and < 2.0.0"
+macabre_stdlib = { git = "git@github.com:dusty-phillips/macabre_stdlib.git", ref = "main" }
 
 [dev-dependencies]
 gleeunit = ">= 1.2.0 and < 2.0.0"

@@ -63,6 +63,7 @@ fn do_parse(
 }
 
 @external(javascript, "../gleam_json_ffi.mjs", "decode")
+@external(python, "gleam_json_ffi", "decode")
 fn decode_string(a: String) -> Result(Dynamic, DecodeError)
 
 /// Decode a JSON bit string into dynamically typed data which can be decoded
@@ -120,6 +121,7 @@ pub fn to_string(json: Json) -> String {
 
 @external(erlang, "gleam_json_ffi", "json_to_string")
 @external(javascript, "../gleam_json_ffi.mjs", "json_to_string")
+@external(python, "gleam_json_ffi", "json_to_string")
 fn do_to_string(a: Json) -> String
 
 /// Convert a JSON value into a string tree.
@@ -137,6 +139,7 @@ fn do_to_string(a: Json) -> String
 ///
 @external(erlang, "gleam_json_ffi", "json_to_iodata")
 @external(javascript, "../gleam_json_ffi.mjs", "json_to_string")
+@external(python, "gleam_json_ffi", "json_to_string")
 pub fn to_string_tree(json: Json) -> StringTree
 
 /// Encode a string into JSON, using normal JSON escaping.
@@ -154,6 +157,7 @@ pub fn string(input: String) -> Json {
 
 @external(erlang, "gleam_json_ffi", "string")
 @external(javascript, "../gleam_json_ffi.mjs", "identity")
+@external(python, "gleam_json_ffi", "identity")
 fn do_string(a: String) -> Json
 
 /// Encode a bool into JSON.
@@ -171,6 +175,7 @@ pub fn bool(input: Bool) -> Json {
 
 @external(erlang, "gleam_json_ffi", "bool")
 @external(javascript, "../gleam_json_ffi.mjs", "identity")
+@external(python, "gleam_json_ffi", "identity")
 fn do_bool(a: Bool) -> Json
 
 /// Encode an int into JSON.
@@ -188,6 +193,7 @@ pub fn int(input: Int) -> Json {
 
 @external(erlang, "gleam_json_ffi", "int")
 @external(javascript, "../gleam_json_ffi.mjs", "identity")
+@external(python, "gleam_json_ffi", "identity")
 fn do_int(a: Int) -> Json
 
 /// Encode a float into JSON.
@@ -205,6 +211,7 @@ pub fn float(input: Float) -> Json {
 
 @external(erlang, "gleam_json_ffi", "float")
 @external(javascript, "../gleam_json_ffi.mjs", "identity")
+@external(python, "gleam_json_ffi", "identity")
 fn do_float(input input: Float) -> Json
 
 /// The JSON value null.
@@ -222,6 +229,7 @@ pub fn null() -> Json {
 
 @external(erlang, "gleam_json_ffi", "null")
 @external(javascript, "../gleam_json_ffi.mjs", "do_null")
+@external(python, "gleam_json_ffi", "do_null")
 fn do_null() -> Json
 
 /// Encode an optional value into JSON, using null if it is the `None` variant.
@@ -263,6 +271,7 @@ pub fn object(entries: List(#(String, Json))) -> Json {
 
 @external(erlang, "gleam_json_ffi", "object")
 @external(javascript, "../gleam_json_ffi.mjs", "object")
+@external(python, "gleam_json_ffi", "object")
 fn do_object(entries entries: List(#(String, Json))) -> Json
 
 /// Encode a list into a JSON array.
@@ -295,6 +304,7 @@ pub fn preprocessed_array(from: List(Json)) -> Json {
 
 @external(erlang, "gleam_json_ffi", "array")
 @external(javascript, "../gleam_json_ffi.mjs", "array")
+@external(python, "gleam_json_ffi", "array")
 fn do_preprocessed_array(from from: List(Json)) -> Json
 
 /// Encode a Dict into a JSON object using the supplied functions to encode
