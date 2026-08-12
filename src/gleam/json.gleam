@@ -62,6 +62,16 @@ fn do_parse(
   |> result.map_error(UnableToDecode)
 }
 
+@target(python)
+fn do_parse(
+  from json: String,
+  using decoder: decode.Decoder(t),
+) -> Result(t, DecodeError) {
+  use dynamic_value <- result.try(decode_string(json))
+  decode.run(dynamic_value, decoder)
+  |> result.map_error(UnableToDecode)
+}
+
 @external(javascript, "../gleam_json_ffi.mjs", "decode")
 @external(python, "gleam_json_ffi", "decode")
 fn decode_string(a: String) -> Result(Dynamic, DecodeError)

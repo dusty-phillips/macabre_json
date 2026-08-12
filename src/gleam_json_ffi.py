@@ -1,6 +1,6 @@
 import json
 
-from gleam_builtins import Error, GleamList, Ok
+from gleam_builtins import EmptyGleamList, Error, GleamList, Ok
 
 
 def json_to_string(value):
@@ -10,7 +10,7 @@ def json_to_string(value):
 def object(entries):
     result = {}
     head = entries
-    while head is not None:
+    while isinstance(head, GleamList):
         key, value = head.value
         result[key] = value
         head = head.tail
@@ -24,7 +24,7 @@ def identity(x):
 def array(values):
     result = []
     head = values
-    while head is not None:
+    while isinstance(head, GleamList):
         result.append(head.value)
         head = head.tail
     return result
@@ -47,7 +47,7 @@ def decode(string):
 
 def _to_gleam(value):
     if isinstance(value, list):
-        result = None
+        result = EmptyGleamList()
         for item in reversed(value):
             result = GleamList(_to_gleam(item), result)
         return result

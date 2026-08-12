@@ -18,6 +18,9 @@ const list_found = "List"
 @target(javascript)
 const list_found = "Array"
 
+@target(python)
+const list_found = "List"
+
 pub fn parse_test() {
   json.parse(from: "5", using: decode.int)
   |> should.equal(Ok(5))
