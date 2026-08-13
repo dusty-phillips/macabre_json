@@ -51,6 +51,8 @@ def _to_gleam(value):
         for item in reversed(value):
             result = GleamList(_to_gleam(item), result)
         return result
+    if isinstance(value, dict):
+        return {key: _to_gleam(item) for key, item in value.items()}
     return value
 
 
