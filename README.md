@@ -1,4 +1,4 @@
-# macabre_gleam_json 🐑
+# macabre_json 🐑
 
 Work with JSON in Gleam!
 
@@ -20,7 +20,7 @@ along with `macabre_stdlib` (which provides the `gleam/*` modules):
 ```toml
 [dependencies]
 macabre_stdlib = { git = "git@github.com:dusty-phillips/macabre_stdlib.git", ref = "main" }
-macabre_gleam_json = { git = "git@github.com:dusty-phillips/macabre_gleam_json.git", ref = "main" }
+macabre_gleam_json = { git = "git@github.com:dusty-phillips/macabre_json.git", ref = "main" }
 ```
 
 ## Encoding
