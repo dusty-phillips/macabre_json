@@ -1,4 +1,4 @@
-name = "gleam_json"
+name = "macabre_gleam_json"
 version = "3.1.0"
 gleam = ">= 1.13.0"
 
